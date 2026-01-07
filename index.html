@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Real-Time Audio Monitoring</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    #status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Real-Time Audio Monitoring (Frontend)</h2>
+
+  <p>Status: <span id="status">Idle</span></p>
+
+  <button id="startBtn">Start Streaming</button>
+  <button id="stopBtn" disabled>Stop Streaming</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
