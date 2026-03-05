@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Meeting Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Meeting Monitor</h1>
+      <p class="subtitle">Real-time hate speech & emotion detection</p>
+    </header>
+
+    <div class="main-content">
+      <!-- Left Panel: Video & Controls -->
+      <div class="left-panel">
+        <div class="video-container">
+          <video id="webcam" autoplay muted playsinline></video>
+          <div class="video-overlay" id="emotionOverlay">--</div>
+        </div>
+        
+        <div class="controls">
+          <button id="startBtn" class="btn btn-start">Start Monitoring</button>
+          <button id="stopBtn" class="btn btn-stop" disabled>Stop</button>
+        </div>
+        
+        <div class="status-bar">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="status">Idle</span>
+        </div>
+      </div>
+
+      <!-- Right Panel: Alerts & Transcriptions -->
+      <div class="right-panel">
+        <!-- Alert Banner -->
+        <div id="alertBanner" class="alert-banner hidden">
+          <span id="alertIcon">⚠️</span>
+          <span id="alertText">No alerts</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-value" id="totalChunks">0</span>
+            <span class="stat-label">Chunks</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" id="alertCount">0</span>
+            <span class="stat-label">Alerts</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" id="currentScore">0.0</span>
+            <span class="stat-label">Risk Score</span>
+          </div>
+        </div>
+
+        <!-- Transcription Feed -->
+        <div class="transcription-section">
+          <h3>Live Transcription</h3>
+          <div id="transcriptionFeed" class="transcription-feed">
+            <p class="placeholder">Transcriptions will appear here...</p>
+          </div>
+        </div>
+
+        <!-- Alert History -->
+        <div class="alerts-section">
+          <h3>Alert History</h3>
+          <div id="alertHistory" class="alert-history">
+            <p class="placeholder">No alerts yet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

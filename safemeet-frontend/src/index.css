@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+}
+
+/* Video grid styles */
+.video-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.video-grid.grid-1 { grid-template-columns: 1fr; }
+.video-grid.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.video-grid.grid-3 { grid-template-columns: repeat(2, 1fr); }
+.video-grid.grid-4 { grid-template-columns: repeat(2, 1fr); }
+.video-grid.grid-5, .video-grid.grid-6 { grid-template-columns: repeat(3, 1fr); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 3px;
+}
+
+/* Warning animation */
+@keyframes pulse-warning {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.warning-pulse {
+  animation: pulse-warning 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
